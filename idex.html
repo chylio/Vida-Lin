@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Determinants of Holistic Care Competence: Insights from Learner Roles and Professional Categories in Medical Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+    <style>
+        /* Custom styles for the poster, complementing Tailwind */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-title {
+            position: relative;
+            padding-left: 2.5rem; /* Space for icon */
+            cursor: pointer; /* Indicate clickable */
+            user-select: none; /* Prevent text selection on double click */
+            padding-right: 2rem; /* Space for the +/- indicator */
+        }
+        .section-title svg {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .section-content {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out;
+        }
+        .section-content.is-expanded {
+            max-height: 1200px; /* Increased height to accommodate the chart and potentially longer text */
+            opacity: 1;
+        }
+        /* Style for the expand/collapse indicator (e.g., a plus/minus sign) */
+        .section-title::after {
+            content: '+';
+            position: absolute;
+            right: 0; /* Position to the right of the title */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+        }
+        .section-title.is-expanded::after {
+            content: '-';
+            transform: translateY(-50%) rotate(0deg); /* Reset rotation for minus */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4 sm:p-8 font-inter text-gray-800 antialiased">
+
+    <!-- Main container for the poster -->
+    <div class="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+
+        <!-- Header Section -->
+        <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 sm:p-8 text-center rounded-t-2xl">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-2 tracking-tight">
+                Exploring Determinants of Holistic Care Competence:<br class="sm:hidden"/>Insights from Learner Roles and Professional Categories in Medical Education
+            </h1>
+            <p class="text-lg sm:text-xl font-light opacity-90 mt-4">
+                Wen-Hsiu Lin, Shi-Yun Chen, Jui Sui Kao, Shu-Ya Lin, Chia-Te Liao
+            </p>
+            <p class="text-md sm:text-lg font-light opacity-80">
+                Medical Education Center, Chi Mei Medical Center, Tainan, Taiwan
+            </p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+
+            <!-- Background Section -->
+            <section class="bg-blue-50 p-6 rounded-xl shadow-md flex flex-col">
+                <h2 class="section-title text-2xl sm:text-3xl font-bold text-blue-800 mb-4 pb-2 border-b-2 border-blue-200" onclick="toggleSection('background-content', this)">
+                    <!-- Icon for Background -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-blue-600">
+                        <rect width="8" height="4" x="8" y="2" rx="1" ry="1"/>
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                        <path d="M12 11h4"/>
+                        <path d="M12 16h4"/>
+                        <path d="M8 11h.01"/>
+                        <path d="M8 16h.01"/>
+                    </svg>
+                    Background
+                </h2>
+                <div id="background-content" class="section-content">
+                    <p class="text-base sm:text-lg leading-relaxed text-gray-700">
+                        Holistic care, addressing physical, psychological, social, and spiritual dimensions, is a cornerstone of patient-centered care. Despite its importance, factors influencing holistic care competence across professional roles are insufficiently understood. This study explores the impact of professional roles, career stages, and interdisciplinary interactions on holistic care performance, providing guidance for curriculum design.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Summary of Work Section -->
+            <section class="bg-indigo-50 p-6 rounded-xl shadow-md flex flex-col">
+                <h2 class="section-title text-2xl sm:text-3xl font-bold text-indigo-800 mb-4 pb-2 border-b-2 border-indigo-200" onclick="toggleSection('summary-work-content', this)">
+                    <!-- Icon for Summary of Work -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-indigo-600">
+                        <path d="M9.14 18.23a4.5 4.5 0 0 0 5.72 0"/>
+                        <path d="M14 22H10"/>
+                        <path d="M14 22c-.5-1.5-2.5-1.5-3 0"/>
+                        <path d="M8.5 2C10 2 12 4 12 4s2-2 3.5-2"/>
+                        <path d="M12 4v17"/>
+                        <path d="M3 15C3 8.5 6 2 12 2s9 6.5 9 13c0 2-2 2-2 4"/>
+                    </svg>
+                    Summary of Work
+                </h2>
+                <div id="summary-work-content" class="section-content">
+                    <p class="text-base sm:text-lg leading-relaxed text-gray-700">
+                        Multidisciplinary case discussions were analyzed to assess holistic care competence across diverse professional roles (e.g., physicians, pharmacists, nurses). Metrics included physiological care quality, psychological and spiritual support, interpersonal challenge resolution, and integration of holistic care principles. Statistical methods, including ANOVA and post-hoc t-tests, identified role-specific differences. Subgroup analyses compared junior and senior physicians with allied healthcare professionals, and qualitative feedback enriched the quantitative findings.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Summary of Results Section -->
+            <section class="bg-purple-50 p-6 rounded-xl shadow-md lg:col-span-2 flex flex-col">
+                <h2 class="section-title text-2xl sm:text-3xl font-bold text-purple-800 mb-4 pb-2 border-b-2 border-purple-200" onclick="toggleSection('summary-results-content', this)">
+                    <!-- Icon for Summary of Results -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-purple-600">
+                        <line x1="12" x2="12" y1="20" y2="10"/>
+                        <line x1="18" x2="18" y1="20" y2="4"/>
+                        <line x1="6" x2="6" y1="20" y2="16"/>
+                    </svg>
+                    Summary of Results
+                </h2>
+                <div id="summary-results-content" class="section-content">
+                    <div class="text-base sm:text-lg leading-relaxed text-gray-700 mb-4">
+                        <p class="mb-3">
+                            Significant differences emerged between roles. The chart below illustrates the average scores of various professional roles in specific care domains (higher numbers indicate better performance).
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 pl-4">
+                            <li>
+                                <strong class="text-purple-700">Allied Healthcare Professionals:</strong> Consistently excelled in physiological care (mean: 7.96, SD: 1.86) and psychological support (mean: 7.95, SD: 1.75).
+                            </li>
+                            <li>
+                                <strong class="text-purple-700">Junior Physicians:</strong> Showed variability in interpersonal care (mean: 7.35, SD: 2.16).
+                            </li>
+                            <li>
+                                <strong class="text-purple-700">Senior Physicians:</strong> Displayed strengths in psychological and spiritual support (mean: 8.20, SD: 1.50).
+                            </li>
+                        </ul>
+                        <p class="mt-3">
+                            Multidisciplinary collaboration and diverse case discussions improved participants’ understanding of holistic care principles.
+                        </p>
+                    </div>
+                    <!-- Canvas for the chart -->
+                    <div class="relative min-h-[300px] h-auto w-full"> <!-- Adjusted height for better horizontal bar visibility -->
+                        <canvas id="resultsChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discussion and Conclusion Section -->
+            <section class="bg-green-50 p-6 rounded-xl shadow-md flex flex-col">
+                <h2 class="section-title text-2xl sm:text-3xl font-bold text-green-800 mb-4 pb-2 border-b-2 border-green-200" onclick="toggleSection('discussion-conclusion-content', this)">
+                    <!-- Icon for Discussion and Conclusion -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-green-600">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    Discussion and Conclusion
+                </h2>
+                <div id="discussion-conclusion-content" class="section-content">
+                    <p class="text-base sm:text-lg leading-relaxed text-gray-700">
+                        Professional roles, career stages, and interdisciplinary exposure significantly shape holistic care competence. Allied healthcare professionals' consistent performance highlights their potential as key contributors to training. Targeted interventions, such as mentorship and experiential learning, are needed to address variability among physicians. Leveraging strengths of specific roles and fostering collaboration can enhance holistic care education, ensuring patient-centered care delivery.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Take-Home Messages Section -->
+            <section class="bg-yellow-50 p-6 rounded-xl shadow-md flex flex-col">
+                <h2 class="section-title text-2xl sm:text-3xl font-bold text-yellow-800 mb-4 pb-2 border-b-2 border-yellow-200" onclick="toggleSection('take-home-messages-content', this)">
+                    <!-- Icon for Take-Home Messages -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-yellow-600">
+                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 6c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5"/>
+                        <path d="M9 18h6"/>
+                        <path d="M10 22h4"/>
+                        <path d="M10 18a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h0a2 2 0 0 1-2-2z"/>
+                    </svg>
+                    Take-Home Messages
+                </h2>
+                <div id="take-home-messages-content" class="section-content">
+                    <ul class="list-disc list-inside text-base sm:text-lg leading-relaxed text-gray-700 space-y-2 pl-4">
+                        <li>
+                            Holistic care competence is influenced by professional identity and interdisciplinary exposure.
+                        </li>
+                        <li>
+                            Curriculum design should address role-specific gaps and leverage allied healthcare professionals’ strengths to cultivate clinicians equipped for patient-centered care and clinical excellence.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        /**
+         * Toggles the visibility of a section's content.
+         * @param {string} contentId - The ID of the content div to toggle.
+         * @param {HTMLElement} titleElement - The title element that was clicked.
+         */
+        function toggleSection(contentId, titleElement) {
+            const content = document.getElementById(contentId);
+            if (content) {
+                const isExpanded = content.classList.contains('is-expanded');
+                content.classList.toggle('is-expanded');
+                titleElement.classList.toggle('is-expanded'); // Toggle class on title for indicator change
+
+                // If the "Summary of Results" section is being expanded, render the chart.
+                if (contentId === 'summary-results-content' && !isExpanded) {
+                    // Give a small delay to allow the transition to start before rendering chart
+                    setTimeout(() => {
+                        renderResultsChart();
+                    }, 300);
+                }
+            }
+        }
+
+        /**
+         * Renders the bar chart for the "Summary of Results" section.
+         */
+        let resultsChartInstance = null; // To store the chart instance and destroy it before re-rendering
+
+        function renderResultsChart() {
+            const ctx = document.getElementById('resultsChart');
+
+            // Destroy existing chart instance if it exists to prevent duplicates
+            if (resultsChartInstance) {
+                resultsChartInstance.destroy();
+            }
+
+            resultsChartInstance = new Chart(ctx, {
+                type: 'bar', // Use 'bar' type
+                data: {
+                    labels: ['Allied Health (Physiological Care)', 'Allied Health (Psychological Support)', 'Junior Physicians (Interpersonal Care)', 'Senior Physicians (Psychological/Spiritual Support)'],
+                    datasets: [{
+                        label: 'Average Score',
+                        data: [7.96, 7.95, 7.35, 8.20],
+                        backgroundColor: [
+                            'rgba(100, 116, 139, 0.8)', // Slate-500 for Allied Health 1
+                            'rgba(129, 140, 248, 0.8)', // Indigo-400 for Allied Health 2
+                            'rgba(168, 85, 247, 0.8)', // Purple-500 for Junior Physicians
+                            'rgba(34, 197, 94, 0.8)'   // Green-500 for Senior Physicians
+                        ],
+                        borderColor: [
+                            'rgba(100, 116, 139, 1)',
+                            'rgba(129, 140, 248, 1)',
+                            'rgba(168, 85, 247, 1)',
+                            'rgba(34, 197, 94, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Set indexAxis to 'y' for horizontal bar chart
+                    responsive: true,
+                    maintainAspectRatio: false, // Allow canvas to resize freely
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Average Scores of Professional Roles in Holistic Care Domains',
+                            font: {
+                                size: 16,
+                                family: 'Inter'
+                            },
+                            color: '#333'
+                        },
+                        legend: {
+                            display: false // Hide legend as there's only one dataset
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    label += context.parsed.x; // Use parsed.x for horizontal bar chart
+                                    // Add standard deviation information to tooltip
+                                    const sdData = [1.86, 1.75, 2.16, 1.50]; // Corresponding SDs
+                                    const index = context.dataIndex;
+                                    return label + ` (SD: ${sdData[index]})`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: { // X-axis is now the value axis
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Average Score',
+                                font: {
+                                    size: 14,
+                                    family: 'Inter'
+                                },
+                                color: '#555'
+                            },
+                            max: 10 // Assuming scores are out of 10
+                        },
+                        y: { // Y-axis is now the category axis
+                            title: {
+                                display: true,
+                                text: 'Professional Role & Care Domain',
+                                font: {
+                                    size: 14,
+                                    family: 'Inter'
+                                },
+                                color: '#555'
+                            },
+                            // Adjust tick font size for better mobile visibility if needed
+                            ticks: {
+                                font: {
+                                    size: 12 // Smaller font size for y-axis labels on mobile
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
